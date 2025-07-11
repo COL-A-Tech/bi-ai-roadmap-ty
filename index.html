@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & BI Career Roadmap | 6-Month Transformation Guide</title>
+  <meta name="description" content="Complete 6-month roadmap to transition from BI Consultant to AI/ML Solution Architect with free resources and hands-on projects.">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00d4ff, #00ff88);
+      width: 0%;
+      transition: width 0.5s ease;
+      border-radius: 4px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .tab-button {
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tab-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .tab-button:hover::before {
+      left: 100%;
+    }
+
+    .tab-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .tab-button.active {
+      background: linear-gradient(135deg, #00d4ff, #00ff88);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    }
+
+    .tab-content {
+      display: none;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .tab-content h2 i {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.5em;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .skills-section, .resources-section {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .skills-section h3, .resources-section h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-item, .resource-item {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border-left: 4px solid #667eea;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover, .resource-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .resource-item a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .resource-item a:hover {
+      color: #764ba2;
+    }
+
+    .resource-item p {
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .project-highlight {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-highlight::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="25" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    }
+
+    .project-highlight h3 {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-highlight p {
+      position: relative;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    .cert-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .cert-card h4 {
+      color: #333;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cert-card .provider {
+      color: #667eea;
+      font-weight: 600;
+    }
+
+    .cert-card .description {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .cert-card .links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cert-card .links a {
+      background: #667eea;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .cert-card .links a:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #00d4ff;
+      transform: translateY(-2px);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      to {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .tab-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-rocket"></i> AI & BI Career Roadmap</h1>
+      <p>Your 6-month transformation guide from BI Consultant to AI/ML Solution Architect</p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-button" onclick="showTab('month1')" data-month="1">
+        <i class="fas fa-play"></i> Month 1-2
+      </button>
+      <button class="tab-button" onclick="showTab('month3')" data-month="3">
+        <i class="fas fa-code"></i> Month 3
+      </button>
+      <button class="tab-button" onclick="showTab('month4')" data-month="4">
+        <i class="fas fa-cloud"></i> Month 4
+      </button>
+      <button class="tab-button" onclick="showTab('month5')" data-month="5">
+        <i class="fas fa-brain"></i> Month 5
+      </button>
+      <button class="tab-button" onclick="showTab('month6')" data-month="6">
+        <i class="fas fa-trophy"></i> Month 6
+      </button>
+      <button class="tab-button" onclick="showTab('certs')" data-month="0">
+        <i class="fas fa-certificate"></i> Certifications
+      </button>
+    </div>
+
+    <div id="month1" class="tab-content">
+      <h2><i class="fas fa-seedling"></i> AI & ML Foundations</h2>
+      <div class="content-grid">
+        <div class="skills-section">
+          <h3><i class="fas fa-cogs"></i> Core Skills</h3>
+          <div class="skill-item">
+            <strong>Python Programming</strong>
+            <p>Master Python fundamentals, data structures, and OOP concepts</p>
+          </div>
+          <div class="skill-item">
+            <strong>Data Analysis with Pandas</strong>
+            <p>Data manipulation, cleaning, and exploratory data analysis</p>
+          </div>
+          <div class="skill-item">
+            <strong>Machine Learning with Scikit-learn</strong>
+            <p>Build regression, classification, and clustering models</p>
+          </div>
+        </div>
+        <div class="resources-section">
+          <h3><i class="fas fa-book"></i> Free Resources</h3>
+          <div class="resource-item">
+            <a href="https://www.python.org/about/gettingstarted/" target="_blank">
+              <i class="fab fa-python"></i> Python Official Tutorial
+            </a>
+            <p>Comprehensive guide to Python programming from the official source</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/" target="_blank">
+              <i class="fas fa-table"></i> Pandas Official Tutorials
+            </a>
+            <p>Interactive tutorials for data manipulation and analysis</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://scikit-learn.org/stable/tutorial/index.html" target="_blank">
+              <i class="fas fa-chart-line"></i> Scikit-learn Tutorials
+            </a>
+            <p>Machine learning tutorials with practical examples</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://developers.google.com/machine-learning/crash-course" target="_blank">
+              <i class="fab fa-google"></i> Google ML Crash Course
+            </a>
+            <p>Free machine learning course with TensorFlow APIs</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-highlight">
+        <h3><i class="fas fa-project-diagram"></i> Month 1-2 Projects</h3>
+        <p><strong>Sales Prediction Model:</strong> Build a regression model to predict sales based on historical data</p>
+        <p><strong>Customer Churn Analysis:</strong> Create a classification model to identify customers likely to churn</p>
+      </div>
+    </div>
+
+    <div id="month3" class="tab-content">
+      <h2><i class="fas fa-cogs"></i> AI Integration & Automation</h2>
+      <div class="content-grid">
+        <div class="skills-section">
+          <h3><i class="fas fa-server"></i> Technical Skills</h3>
+          <div class="skill-item">
+            <strong>API Development</strong>
+            <p>Create REST APIs using FastAPI or Flask</p>
+          </div>
+          <div class="skill-item">
+            <strong>Containerization</strong>
+            <p>Learn Docker fundamentals and container deployment</p>
+          </div>
+          <div class="skill-item">
+            <strong>ML Model Deployment</strong>
+            <p>Serve machine learning models in production</p>
+          </div>
+        </div>
+        <div class="resources-section">
+          <h3><i class="fas fa-link"></i> Free Resources</h3>
+          <div class="resource-item">
+            <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">
+              <i class="fas fa-rocket"></i> FastAPI Official Tutorial
+            </a>
+            <p>Modern, fast web framework for building APIs with Python</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://docs.docker.com/get-started/" target="_blank">
+              <i class="fab fa-docker"></i> Docker Get Started Guide
+            </a>
+            <p>Learn containerization and deployment fundamentals</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://flask.palletsprojects.com/en/2.3.x/tutorial/" target="_blank">
+              <i class="fas fa-flask"></i> Flask Official Tutorial
+            </a>
+            <p>Build web applications and APIs with Flask</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://github.com/microsoft/MLOps" target="_blank">
+              <i class="fab fa-github"></i> Microsoft MLOps Guide
+            </a>
+            <p>Best practices for machine learning operations</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-highlight">
+        <h3><i class="fas fa-project-diagram"></i> Month 3 Project</h3>
+        <p><strong>ML API Service:</strong> Deploy your ML model as a REST API using FastAPI, containerize with Docker, and implement basic CI/CD pipeline</p>
+      </div>
+    </div>
+
+    <div id="month4" class="tab-content">
+      <h2><i class="fas fa-cloud"></i> Cloud AI & MLOps</h2>
+      <div class="content-grid">
+        <div class="skills-section">
+          <h3><i class="fas fa-cloud-upload-alt"></i> Cloud Skills</h3>
+          <div class="skill-item">
+            <strong>Azure Machine Learning</strong>
+            <p>Build and deploy models using Azure ML Studio</p>
+          </div>
+          <div class="skill-item">
+            <strong>AWS SageMaker</strong>
+            <p>End-to-end machine learning on AWS platform</p>
+          </div>
+          <div class="skill-item">
+            <strong>MLOps Pipelines</strong>
+            <p>Automated training, validation, and deployment workflows</p>
+          </div>
+        </div>
+        <div class="resources-section">
+          <h3><i class="fas fa-graduation-cap"></i> Free Resources</h3>
+          <div class="resource-item">
+            <a href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-1st-experiment-sdk-setup" target="_blank">
+              <i class="fab fa-microsoft"></i> Azure ML Tutorials
+            </a>
+            <p>Complete tutorials for Azure Machine Learning</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://aws.amazon.com/sagemaker/getting-started/" target="_blank">
+              <i class="fab fa-aws"></i> AWS SageMaker Getting Started
+            </a>
+            <p>Build, train, and deploy ML models on AWS</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://cloud.google.com/ai-platform/docs/getting-started-keras" target="_blank">
+              <i class="fab fa-google"></i> Google Cloud AI Platform
+            </a>
+            <p>Machine learning on Google Cloud Platform</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://mlops.org/" target="_blank">
+              <i class="fas fa-infinity"></i> MLOps.org
+            </a>
+            <p>Community-driven MLOps best practices and resources</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-highlight">
+        <h3><i class="fas fa-project-diagram"></i> Month 4 Project</h3>
+        <p><strong>End-to-End ML Pipeline:</strong> Build a complete machine learning pipeline on your preferred cloud platform with automated training, validation, and deployment</p>
+      </div>
+    </div>
+
+    <div id="month5" class="tab-content">
+      <h2><i class="fas fa-brain"></i> GenAI & Human-Centered AI</h2>
+      <div class="content-grid">
+        <div class="skills-section">
+          <h3><i class="fas fa-robot"></i> GenAI Skills</h3>
+          <div class="skill-item">
+            <strong>LLM Integration</strong>
+            <p>Work with OpenAI API, GPT models, and prompt engineering</p>
+          </div>
+          <div class="skill-item">
+            <strong>LangChain Framework</strong>
+            <p>Build applications with large language models</p>
+          </div>
+          <div class="skill-item">
+            <strong>AI Ethics & Safety</strong>
+            <p>Responsible AI development and deployment practices</p>
+          </div>
+        </div>
+        <div class="resources-section">
+          <h3><i class="fas fa-magic"></i> Free Resources</h3>
+          <div class="resource-item">
+            <a href="https://platform.openai.com/docs/quickstart" target="_blank">
+              <i class="fas fa-bolt"></i> OpenAI API Quickstart
+            </a>
+            <p>Get started with OpenAI's powerful language models</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://python.langchain.com/docs/get_started" target="_blank">
+              <i class="fas fa-link"></i> LangChain Documentation
+            </a>
+            <p>Build applications with LLMs using LangChain</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://huggingface.co/learn/nlp-course/chapter1/1" target="_blank">
+              <i class="fas fa-face-smile"></i> Hugging Face NLP Course
+            </a>
+            <p>Free course on natural language processing</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://www.partnershiponai.org/" target="_blank">
+              <i class="fas fa-balance-scale"></i> Partnership on AI
+            </a>
+            <p>Resources on responsible AI development</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-highlight">
+        <h3><i class="fas fa-project-diagram"></i> Month 5 Project</h3>
+        <p><strong>AI-Powered BI Assistant:</strong> Create an intelligent chatbot that can answer business questions, generate reports, and provide insights using LLMs and your BI expertise</p>
+      </div>
+    </div>
+
+    <div id="month6" class="tab-content">
+      <h2><i class="fas fa-trophy"></i> Capstone & Professional Branding</h2>
+      <div class="content-grid">
+        <div class="skills-section">
+          <h3><i class="fas fa-star"></i> Capstone Focus</h3>
+          <div class="skill-item">
+            <strong>Portfolio Development</strong>
+            <p>Create a comprehensive showcase of your projects</p>
+          </div>
+          <div class="skill-item">
+            <strong>Technical Documentation</strong>
+            <p>Write clear, professional documentation for your work</p>
+          </div>
+          <div class="skill-item">
+            <strong>Presentation Skills</strong>
+            <p>Effectively communicate technical concepts to stakeholders</p>
+          </div>
+        </div>
+        <div class="resources-section">
+          <h3><i class="fas fa-bullhorn"></i> Branding Resources</h3>
+          <div class="resource-item">
+            <a href="https://github.com/" target="_blank">
+              <i class="fab fa-github"></i> GitHub Portfolio Guide
+            </a>
+            <p>Build an impressive developer portfolio on GitHub</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://www.linkedin.com/learning/topics/linkedin" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn Learning
+            </a>
+            <p>Optimize your professional LinkedIn profile</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://medium.com/" target="_blank">
+              <i class="fab fa-medium"></i> Medium Writing Platform
+            </a>
+            <p>Share your learning journey and technical insights</p>
+          </div>
+          <div class="resource-item">
+            <a href="https://dev.to/" target="_blank">
+              <i class="fab fa-dev"></i> Dev.to Community
+            </a>
+            <p>Connect with developers and share your projects</p>
+          </div>
+        </div>
+      </div>
+      <div class="project-highlight">
+        <h3><i class="fas fa-project-diagram"></i> Capstone Project Ideas</h3>
+        <p><strong>Integrated Analytics Platform:</strong> Build a full-stack application that combines traditional BI with AI/ML capabilities</p>
+        <p><strong>Industry-Specific AI Solution:</strong> Create a specialized AI tool for your domain expertise (finance, healthcare, retail, etc.)</p>
+      </div>
+    </div>
+
+    <div id="certs" class="tab-content">
+      <h2><i class="fas fa-certificate"></i> Professional Certifications</h2>
+      
+      <div class="cert-card">
+        <h4><i class="fab fa-microsoft"></i> Microsoft Azure AI Engineer Associate</h4>
+        <p class="provider">Microsoft</p>
+        <p class="description">Validate your skills in designing and implementing AI solutions on Azure platform.</p>
+        <div class="links">
+          <a href="https://docs.microsoft.com/en-us/learn/certifications/azure-ai-engineer/" target="_blank">
+            <i class="fas fa-info-circle"></i> Learn More
+          </a>
+          <a href="https://docs.microsoft.com/en-us/learn/paths/azure-ai-engineer/" target="_blank">
+            <i class="fas fa-graduation-cap"></i> Free Training
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <h4><i class="fab fa-aws"></i> AWS Certified Machine Learning - Specialty</h4>
+        <p class="provider">Amazon Web Services</p>
+        <p class="description">Demonstrate expertise in building, training, and deploying ML models on AWS.</p>
+        <div class="links">
+          <a href="https://aws.amazon.com/certification/certified-machine-learning-specialty/" target="_blank">
+            <i class="fas fa-info-circle"></i> Learn More
+          </a>
+          <a href="https://aws.amazon.com/training/learn-about/machine-learning/" target="_blank">
+            <i class="fas fa-graduation-cap"></i> Free Training
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <h4><i class="fab fa-google"></i> Google Cloud Professional ML Engineer</h4>
+        <p class="provider">Google Cloud</p>
+        <p class="description">Prove your ability to design and build ML models on Google Cloud Platform.</p>
+        <div class="links">
+          <a href="https://cloud.google.com/certification/machine-learning-engineer" target="_blank">
+            <i class="fas fa-info-circle"></i> Learn More
+          </a>
+          <a href="https://cloud.google.com/training/machinelearning-ai" target="_blank">
+            <i class="fas fa-graduation-cap"></i> Free Training
+          </a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <h4><i class="fas fa-certificate"></i> TensorFlow Developer Certificate</h4>
+        <p class="provider">TensorFlow</p>
+        <p class="description">Validate your skills in using TensorFlow for deep learning applications.</p>
+        <div class="links">
+          <a href="https://www.tensorflow.org/certificate" target="_blank">
+            <i class="fas fa-info-circle"></i> Learn More
+          </a>
+          <a href="https://www.tensorflow.org/learn" target="_blank">
+            <i class="fas fa-graduation-cap"></i> Free Training
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>🚀 Your journey from BI Consultant to AI/ML Solution Architect starts here!</p>
+      <p>Remember: Consistency beats perfection. Focus on building one skill at a time.</p>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://medium.com/" target="_blank"><i class="fab fa-medium"></i></a>
+        <a href="https://dev.to/" target="_blank"><i class="fab fa-dev"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+    const progressFill = document.getElementById('progressFill');
+
+    function showTab(id) {
+      // Remove active class from all tabs and contents
+      tabs.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+      
+      // Add active class to selected tab and content
+      document.querySelector(`#${id}`).classList.add('active');
+      event.target.classList.add('active');
+      
+      // Update progress bar based on selected month
+      const monthData = {
+        'month1': 16.67, // Month 1-2
+        'month3': 33.33, // Month 3
+        'month4': 50,    // Month 4
+        'month5': 66.67, // Month 5
+        'month6': 83.33, // Month 6
+        'certs': 100     // Certifications
+      };
+      
+      const progress = monthData[id] || 0;
+      progressFill.style.width = progress + '%';
+    }
+
+    // Initialize with first tab
+    function init() {
+      showTab('month1');
+      // Set first tab as active without triggering event
+      document.querySelector('.tab-button').classList.add('active');
+    }
+
+    // Add click event listeners to all tab buttons
+    tabs.forEach(button => {
+      button.addEventListener('click', function() {
+        const targetId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+        showTab(targetId);
+      });
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', init);
+
+    // Add smooth scroll behavior for better UX
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add animation on scroll for better engagement
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all skill items and resource items
+    document.querySelectorAll('.skill-item, .resource-item, .cert-card').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+
+    // Add typing effect to header
+    function typeWriter(element, text, speed = 100) {
+      let i = 0;
+      element.innerHTML = '';
+      
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      
+      type();
+    }
+
+    // Initialize typing effect on load
+    window.addEventListener('load', () => {
+      const subtitle = document.querySelector('.header p');
+      const originalText = subtitle.textContent;
+      typeWriter(subtitle, originalText, 50);
+    });
+  </script>
+</body>
+</html>
